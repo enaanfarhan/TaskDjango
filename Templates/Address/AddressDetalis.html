@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h1 style="text-align:center"> {{add_detalis.name}} </h1>
+    <div class="container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>District Name</th>
+                <th>Division</th>
+                <th>Population</th>
+                <th>Area</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{add_detalis.name}}</td>
+                <td>{{add_detalis.name}}</td>
+                <td>{{add_detalis.name}}</td>
+                <td>{{add_detalis.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
