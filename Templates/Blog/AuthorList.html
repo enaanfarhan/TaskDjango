@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% for authors in authors %}
+    <ul>
+        <li>{{ authors.name }}</li>
+    </ul>
+
+{% endfor %}
+
+{% endblock %}

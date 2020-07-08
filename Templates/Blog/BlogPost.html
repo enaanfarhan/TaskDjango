@@ -1,7 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content%}
-<h1>{{ blog_post.title}}</h1>
-<p> <b>Published on:</b> <i>{{ blog_post.date}} </i></p>
-<p>{{ blog_post.description }}</p>
+
+<div class="col-md-8">
+    <div class="card">
+        <img src="{{ blog_post.image.url }}" alt="" class="card-img-top" height="450">
+
+        <div class="card body">
+
+            <h1>{{ blog_post.title }}</h1>
+            <p> <b>Published By:</b> <i>{{ blog_post.author }}</i> <b>Published on:</b> <i>{{ blog_post.date}} </i></p>
+            <p>{{ blog_post.description}}</p>
+        </div>
+    </div>
+</div>
 {% endblock %}

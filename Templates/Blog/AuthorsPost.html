@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ author }}'s Post</h1>
+<br>
+{% for post in aposts %}
+    <h2>{{ post.title}}</h2>
+    <p>{{ post.author }}</p>
+    <p>{{ post.description }}</p>
+<br>
+<hr>
+{% endfor %}
+
+{% endblock %}
