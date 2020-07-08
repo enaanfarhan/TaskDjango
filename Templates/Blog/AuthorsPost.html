@@ -1,14 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>{{ author }}'s Post</h1>
+<div class="container">
+    <h1>Authors Post</h1>
 <br>
 {% for post in aposts %}
     <h2>{{ post.title}}</h2>
-    <p>{{ post.author }}</p>
-    <p>{{ post.description }}</p>
+    <p> <b>Published By:</b> <i>{{ post.author }}</i> <b>Published on:</b> <i>{{ post.date}} </i></p>
+        <p>{{ post.description|safe|truncatewords:"50"|linebreaks }}</p>
+        <a href="{% url 'blog-post' post.id %}">read more</a>
 <br>
 <hr>
 {% endfor %}
 
+</div>
 {% endblock %}
