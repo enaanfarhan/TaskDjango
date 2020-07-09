@@ -25,8 +25,10 @@ urlpatterns = [
     path('student/', include('student.urls')),
     path('', home, name='home'),
     path('address/', include('Address.urls')),
-    path('blog/', include('Blog.urls'))
+    path('blog/', include('Blog.urls')),
+    path('store/', include('Store.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
