@@ -13,6 +13,7 @@ class product(models.Model):
     description = models.CharField(max_length=500)
     image = models.ImageField(blank=True, null=True, upload_to='Store')
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, blank=True, null=True)
+    review = models.IntegerField()
 
     def __str__(self):
         return self.name
