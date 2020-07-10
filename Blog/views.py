@@ -9,7 +9,8 @@ def author_list(request):
     return render(request, 'Blog/AuthorList.html', context)
 
 def author_post(request, author_name):
-    aposts = blog.objects.filter(author=author_name)
+    a_name = Author.objects.get(name=author_name)
+    aposts = blog.objects.filter(author=a_name)
     context = {'aposts': aposts}
     return render(request, 'Blog/AuthorsPost.html', context)
 
