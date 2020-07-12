@@ -1,118 +1,113 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    {% load static %}
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+{% load static %}
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+<!-- Document Meta
+    ============================================= -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!--IE Compatibility Meta-->
+<meta name="author" content="zytheme" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="construction html5 template">
+<link href="assets/images/favicon/favicon.ico" rel="icon">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<!-- Fonts
+    ============================================= -->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i%7CRaleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i%7CUbuntu:300,300i,400,400i,500,500i,700,700i' rel='stylesheet' type='text/css'>
 
+<!-- Stylesheets
+    ============================================= -->
+<link href="{% static 'assets/css/external.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/style.css' %}" rel="stylesheet">
+<link href="{% static 'assets/css/custom.css' %}" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
-    <link rel="stylesheet" href="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/shop-homepage.css' %}">
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+<!--[if lt IE 9]>
+      <script src="{% static 'assets/js/html5shiv.js'}"></script>
+      <script src="{% static 'assets/js/respond.min.js'}"></script>
+    <![endif]-->
 
+<!-- Document Title
+    ============================================= -->
+<title>TaskDjango | Enaan Farhan</title>
+    {% block head_script %}
+    {% endblock %}
+</head>
+<body>
+<!-- Document Wrapper
+	============================================= -->
+<div id="wrapper" class="wrapper clearfix">
+	<header id="navbar-spy" class="header header-3">
+		<nav id="primary-menu" class="navbar navbar-fixed-top">
+			<div class="container">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<a class="logo" href="index.html">
+					<img src="{% static 'assets/images/logo/logo-light.png' %}" alt="Autoshop">
+					</a>
+				</div>
 
-
-    <title>TeskDjango | Enaan Farhan</title>
-
-
-      <style>
-        .footer {
-          clear: both;
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          width: 100%;
-          text-align: center;
-          height: 0rem;
-        }
-
-        #page-container {
-          position: relative;
-          min-height: 100vh;
-        }
-      </style>
-
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
-         <div class="container">
-            <a class="navbar-brand" href="#">EnaanFarhan</a>
-             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% url 'std-list' %}">Student List</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% url 'add-list' %}">Address</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% url 'blog-list' %}#">Blog</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% url 'authors' %}#">Authors</a></li>
-                  <li class="nav-item"><a class="nav-link" href="{% url 'store' %}#">Store</a></li>
-                </ul>
-             </div>
-         </div>
-    </nav>
-
-
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse pull-right" id="header-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-left">
+						<!-- Raw Code <li class="has-dropdown active"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Home</a></li>-->
+                        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{% url 'std-list' %}">Student List</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{% url 'add-list' %}">Address</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{% url 'blog-list' %}#">Blog</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{% url 'authors' %}#">Authors</a></li>
+                          <li class="nav-item"><a class="nav-link" href="{% url 'store' %}#">Store</a></li>
+					</ul>
+				</div>
+				<!-- /.navbar-collapse -->
+			</div>
+			<!-- /.container-fluid -->
+		</nav>
+	</header>
     <br>
-    <div id="page-container">
-    <div id="content-wrap">
-        {% block content%}
 
-        {% endblock %}
-    </div>
+	<!-- Clients
+============================================= -->
+	<section id="clients" class="clients">
+		<div class="container heading">
+    {% block content %}
+    {% endblock %}
+
+		</div>
+	</section>
 
 
-  <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+	<!-- Footer #1
+============================================= -->
+	<footer id="footer" class="footer footer-1">
 
-    <!-- Home Page Script-->
-    <script>
-      // Typewriter.js
-// https://github.com/ronv/Typewriter.js
 
-$.fn.typewriter = function() {
-  this.each(function() {
-    var c = $(this),
-      b = c.html(),
-      a = 0,
-      d = 0;
-    c.html("");
-    var e = function() {
-      if ("<" == b.substring(a, a + 1)) {
-        var f = new RegExp(/<span class="instant"/),
-          g = new RegExp(/<span class="clear"/);
-        if (b.substring(a, b.length).match(f)) a += b.substring(a, b.length).indexOf("</span>") + 7;
-        else if (b.substring(a, b.length).match(g)) d = a, a += b.substring(a, b.length).indexOf("</span>") + 7;
-        else
-          for (;
-            ">" != b.substring(a, a + 1);) a++
-      }
-      c.html(b.substring(d, a++) + (a & 1 ? "_" : ""));
-      a >= b.length || setTimeout(e, 70 + 100 *
-        Math.random())
-    };
-    e()
-  });
-  return this
-};
-$(".terminal").typewriter();
-    </script>
-    <!-- Home Page Script-->
+		<!-- Footer Bar
+	============================================= -->
+		<div class="footer-bar">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-md-6">
+						<div class="powered">
+							<p class="m-0 text-center text-white">&copy; 2020 <b>TeskDjango</b> | Developed By: <b><a href="https://www.facebook.com/enaanfarhan">Enaan Farhan</a></b></p>
+						</div>
+					</div>
 
-          <!-- Footer -->
-  <footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">&copy; 2020 <b>TeskDjango</b> | Developed By: <b><a href="https://www.facebook.com/enaanfarhan">Enaan Farhan</a></b></p>
-    </div>
-    <!-- /.container -->
-  </footer>
+				</div>
+			</div>
+			<!-- .container end -->
+		</div>
+		<!-- .footer-copyright end -->
+	</footer>
+</div>
+<!-- #wrapper end -->
 
-  <!--Footer End-->
-    </div>
-  </body>
+<!-- Footer Scripts
+============================================= -->
+<script src="{% static 'assets/js/jquery-2.2.4.min.js' %}"></script>
+<script src="{% static 'assets/js/plugins.js' %}"></script>
+<script src="{% static 'assets/js/functions.js' %}"></script>
+</body>
 </html>
