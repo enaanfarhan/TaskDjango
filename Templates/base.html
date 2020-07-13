@@ -32,8 +32,11 @@
 <!-- Document Title
     ============================================= -->
 <title>TaskDjango | Enaan Farhan</title>
+
     {% block head_script %}
+
     {% endblock %}
+
 </head>
 <body>
 <!-- Document Wrapper
@@ -70,13 +73,14 @@
 
 	<!-- Clients
 ============================================= -->
-	<section id="clients" class="clients">
-		<div class="container heading">
+
+<div id="wrapper" class="wrapper clearfix">
+	<header id="navbar-spy" class="header header-1">
+	</header>
     {% block content %}
     {% endblock %}
+</div>
 
-		</div>
-	</section>
 
 
 	<!-- Footer #1
@@ -109,5 +113,8 @@
 <script src="{% static 'assets/js/jquery-2.2.4.min.js' %}"></script>
 <script src="{% static 'assets/js/plugins.js' %}"></script>
 <script src="{% static 'assets/js/functions.js' %}"></script>
+   {% block body_script %}
+
+    {% endblock %}
 </body>
 </html>

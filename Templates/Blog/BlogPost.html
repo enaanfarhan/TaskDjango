@@ -1,17 +1,123 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Document Wrapper
+	============================================= -->
 
-{% block content%}
 
-<div class="container col-md-8">
-    <div class="card">
-        <img src="{{ blog_post.image.url }}" alt="" class="card-img-top" height="450">
 
-        <div class="card body">
+	<!-- Page Title
+============================================= -->
 
-            <h1>{{ blog_post.title }}</h1>
-            <p> <b>Published By:</b> <i>{{ blog_post.author }}</i> <b>Published on:</b> <i>{{ blog_post.date}} </i></p>
-            <p>{{ blog_post.description}}</p>
-        </div>
-    </div>
-</div>
+	<!-- #page-title end -->
+	
+	<!-- Blog Standard
+============================================= -->
+	<section id="blog" class="blog blog-single">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-9">
+					<div class="entry">
+						<div class="entry-img">
+							<a href="#">
+							<img src="{{ blog_post.image.url }}" alt="Entry Title">
+							</a>
+						</div>
+						<!-- .entry-img end -->
+						<div class="entry-content">
+							<div class="entry-format">
+								<i class="fa fa-image"></i>
+							</div>
+							<div class="entry-title">
+								<h3>
+									<a href="#">{{ blog_post.title }}</a>
+								</h3>
+							</div>
+							<!-- .entry-title end -->
+							<ul class="entry-meta list-inline clearfix">
+								<li class="entry-date">Published On: <span>{{ blog_post.date}}</span></li>
+								<li class="entry-author">Published By:
+									<a href="#">{{ blog_post.author }}</a>
+								</li>
+								<li class="entry-category">Category :
+									<a href="#">{{ blog_post.category }}</a>
+								</li>
+							</ul>
+							<!-- .entry-meta end -->
+							<div class="entry-snippet">
+								<p>{{ blog_post.description}}</p>
+							</div>
+							<!-- .entry-snippet end -->
+							<br><br>
+							<div class="entry-share">
+								<div class="share-title pull-left pull-none-xs">
+									<h6>share this article: </h6>
+								</div>
+								<div class="share-links text-right">
+									<a class="share-facebook" href="#"><i class="fa fa-facebook"></i></a>
+									<a class="share-twitter" href="#"><i class="fa fa-twitter"></i></a>
+									<a class="share-google-plus" href="#"><i class="fa fa-google-plus"></i></a>
+									<a class="share-pinterest" href="#"><i class="fa fa-pinterest"></i></a>
+									<a class="share-dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+									<a class="share-linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+								</div>
+							</div>
+							<!-- .entry-share end -->
+						</div>
+						<!-- .entry-content end -->
+					</div>
+					<!-- .entry end -->
+
+					<!-- .entry-author end -->
+
+					<!-- .entry-comments end -->
+					<div class="entry-comments-forms">
+						<div class="comment-form-heading">
+							<h6>Leave Comment</h6>
+						</div>
+						<div class="comment-form-body">
+							<form id="entry-comments-form" class="mb-0">
+								<div class="row">
+									<div class="col-md-6">
+										<input type="text" class="form-control" name="Comment-name" id="name" placeholder="Your Name" required/>
+										<input type="email" class="form-control" name="Comment-email" id="email" placeholder="Your Email" required/>
+										<button type="submit" id="submit-message" class="btn btn-primary btn-block">Add Comment</button>
+									</div>
+									<div class="col-md-6">
+										<textarea name="Comment-message" id="Comment" rows="4" placeholder="Comment" required></textarea>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<!-- .entry-comments-form end -->
+				</div>
+				<!-- .col-md-9 end -->
+				<div class="col-xs-12 col-sm-12 col-md-3 sidebar">
+					<!-- Categories
+============================================= -->
+					<div class="widget widget-categories">
+						<div class="widget-title">
+							<h5>categories</h5>
+						</div>
+						<div class="widget-content">
+							<ul class="list-unstyled">
+								<li>
+									<a href="#"><i class="fa fa-angle-double-right"></i>Branding<span>(5)</span></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<!-- .widget-categories end -->
+				</div>
+				<!-- .col-md-3 end -->
+			</div>
+			<!-- .row end -->
+			
+		</div>
+		<!-- .container end -->
+	</section>
+	<!-- #blog end -->
+
+
 {% endblock %}
