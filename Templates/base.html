@@ -10,7 +10,7 @@
 <meta name="author" content="zytheme" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="construction html5 template">
-<link href="assets/images/favicon/favicon.ico" rel="icon">
+<link href="{% static 'assets/images/favicon/favicon.png' %}" rel="icon">
 
 <!-- Fonts
     ============================================= -->
@@ -77,8 +77,11 @@
 <div id="wrapper" class="wrapper clearfix">
 	<header id="navbar-spy" class="header header-1">
 	</header>
+
     {% block content %}
+
     {% endblock %}
+
 </div>
 
 

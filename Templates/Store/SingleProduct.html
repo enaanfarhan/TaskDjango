@@ -2,227 +2,131 @@
 {% load static %}
 
 {% block content%}
-<section class="section-wrap single-product pt-70">
-  <div class="container relative">
-    <div class="row">
 
-      <div class="col-md-6">
+	<section id="page-title" class="page-title">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<h1>Shop Single Product</h1>
+				</div>
+				<!-- .col-md-6 end -->
+				<div class="col-xs-12 col-sm-12 col-md-6">
+					<ol class="breadcrumb text-right">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+						<li class="active">shop</li>
+					</ol>
+				</div>
+				<!-- .col-md-6 end -->
+			</div>
+			<!-- .row end -->
+		</div>
+		<!-- .container end -->
+	</section>
+	<!-- #page-title end -->
+	
+	<!-- Shop Single right sidebar
+============================================= -->
+	<section id="shopgrid" class="shop shop-single">
+		<div class="container shop-content">
 
-        <div id="slider" class="flexslider">
+			<!-- .row end -->
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-5">
+					<div class="prodcut-images">
+						<div class="product-img-slider">
+							<img src="{% static 'assets/images/shop/full/1.jpg' %}" alt="product image">
+							<img src="{% static 'assets/images/shop/full/2.jpg' %}" alt="product image">
+							<img src="{% static 'assets/images/shop/full/3.jpg' %}" alt="product image">
+							<img src="{% static 'assets/images/shop/full/4.jpg' %}" alt="product image">
+							<img src="{% static 'assets/images/shop/full/3.jpg' %}" alt="product image">
+						</div>
+						<div class="product-img-nav">
+							<img src="{% static 'assets/images/shop/full/5.jpg" alt="product image">
+							<img src="{% static 'assets/images/shop/full/6.jpg" alt="product image">
+							<img src="{% static 'assets/images/shop/full/7.jpg" alt="product image">
+							<img src="{% static 'assets/images/shop/full/8.jpg" alt="product image">
+							<img src="{% static 'assets/images/shop/full/7.jpg" alt="product image">
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-12 col-md-7">
+					<div class="product-title text-center-xs">
+						<h3>{{ single_product.name }}</h3>
+					</div>
+					<!-- .product-title end -->
+					<div class="product-meta mb-30">
+						<div class="product-price pull-left pull-none-xs">
+							<p>${{ single_product.price }}</p>
+						</div>
+						<!-- .product-price end -->
+						<div class="product-review text-right text-center-xs">
+							<span class="product-rating">
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star"></i>
+							<i class="fa fa-star-half-o"></i>
+							<i class="fa fa-star-o"></i>
+							</span>
+							<span>5 Review(s)</span> / <span>
+							<a href="#">Add Review</a>
+							</span>
+						</div>
+						<!--- .product-review end -->
+					</div>
+					<!-- .product-img end -->
+					
+					<div class="product-desc text-center-xs">
+						<p class="mb-0">Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. Ultrices proin mi urna nibh ut, aenean sollicitudin etiam libero nisl, ultrices ridiculus in magna purus consequuntur, ipsum donec orci ad vitae pede, id odio.</p>
+					</div>
+					<!-- .product-desc end -->
+					
+					<hr class="mt-30 mb-30">
+					<div class="product-details text-center-xs">
+						<h5>Other Details :</h5>
+						<ul class="list-unstyled">
+							<li>Product : <span>Air System</span></li>
+							<li>Code : <span>#0214</span></li>
+							<li>Availabiltity : <span>Available</span></li>
+							<li>Brand : <span>Opel</span></li>
+						</ul>
+					</div>
+					<!-- .product-details end -->
+					<hr class="mt-30 mb-30">
+					<div class="product-action">
+						<div class="product-quantity pull-left pull-none-xs">
+							<span class="qua">Quantity:</span>
+							<span>
+							<a href="#"><i class="fa fa-minus"></i></a>
+							<input type="text" value="1" id="pro-qunt" readonly>
+							<a href="#"><i class="fa fa-plus"></i></a>
+							</span>
+						</div>
+						<div class="product-cta text-right text-center-xs">
+							<a class="btn btn-primary" href="#">add to cart</a>
+							<a class="btn btn-primary bordered" href="#">wishlist</a>
 
-          <div class="flex-viewport" style="overflow: hidden; position: relative;">
-            <ul class="slides clearfix" style="width: 1200%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-              <li class="flex-active-slide" style="width: 555px; float: left; display: block;">
-                <a href="img/product_large_1.jpg" data-lightbox="true">
-                  <img src="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" alt="" draggable="false">
-                  <i class="arrow_expand"></i>
-                </a>
-              </li>
-              <li style="width: 555px; float: left; display: block;">
-                <a href="img/product_large_2.jpg" data-lightbox="true">
-                  <img src="img/product_large_2.jpg" alt="" draggable="false">
-                  <i class="arrow_expand"></i>
-                </a>
-              </li>
-              <li style="width: 555px; float: left; display: block;">
-                <a href="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" data-lightbox="true">
-                  <img src="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" alt="" draggable="false">
-                  <i class="arrow_expand"></i>
-                </a>
-              </li>
-              <li style="width: 555px; float: left; display: block;">
-                <a href="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" data-lightbox="true">
-                  <img src="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" alt="" draggable="false">
-                  <i class="arrow_expand"></i>
-                </a>
-              </li>
-              <li style="width: 555px; float: left; display: block;">
-                <a href="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" data-lightbox="true">
-                  <img src="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" alt="" draggable="false">
-                  <i class="arrow_expand"></i>
-                </a>
-              </li>
-              <li style="width: 555px; float: left; display: block;">
-                <a href="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" data-lightbox="true">
-                  <img src="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" alt="" draggable="false">
-                  <i class="arrow_expand"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <ul class="flex-direction-nav">
-            <li class="flex-nav-prev"><a class="flex-prev flex-disabled" href="#" tabindex="-1"><i class="fa fa-angle-left"></i></a></li>
-            <li class="flex-nav-next"><a class="flex-next" href="#"><i class="fa fa-angle-right"></i></a></li>
-          </ul>
-        </div>
-
-        <div id="thumbs" class="flexslider">
-
-          <div class="flex-viewport" style="overflow: hidden; position: relative;">
-            <ul class="slides" style="width: 1200%; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-             <!-- <li class="flex-active-slide" style="width: 103px; float: left; display: block;">
-                <img src="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" alt="" draggable="false">
-              </li>-->
-              <!--<li style="width: 103px; float: left; display: block;">
-                <img src="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" alt="" draggable="false">
-              </li>-->
-              <!--<li style="width: 103px; float: left; display: block;">
-                <img src="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" alt="" draggable="false">
-              </li>-->
-              <!--<li style="width: 103px; float: left; display: block;">
-                <img src="http://deothemes.com/envato/amadea/html/img/product_large_1.jpg" alt="" draggable="false">
-              </li>-->
-              <!--<li style="width: 103px; float: left; display: block;">
-                <img src="" alt="" draggable="false">
-              </li>-->
-              <!--<li style="width: 103px; float: left; display: block;">
-                <img src="img/thumb_6.jpg" alt="" draggable="false">-->
-              </li>
-            </ul>
-          </div>
-          <ul class="flex-direction-nav">
-            <li class="flex-nav-prev"><a class="flex-prev flex-disabled" href="#" tabindex="-1"><i class="fa fa-angle-left"></i></a></li>
-            <li class="flex-nav-next"><a class="flex-next" href="#"><i class="fa fa-angle-right"></i></a></li>
-          </ul>
-        </div>
-
-      </div>
-      <!-- end col -->
-
-      <div class="col-md-6 product-description-wrap">
-        <h1 class="product-title">ladies bag</h1>
-        <!--<div class="rating">
-          <a href="#">3 Reviews</a>
-        </div>-->
-        <span class="price">
-	            				<!--<del>
-	            					<span>$322</span>
-        </del>-->
-        <ins>
-	            					<span class="ammount">$299.99</span>
-	            				</ins>
-        </span>
-        <p class="product-description">Amadea Shop is a very slick and clean e-commerce template with endless possibilities. Creating an awesome clothes store with this Theme is easy than you can imagine. Grab this theme now.</p>
-        <!--<div class="color-swatches clearfix">
-          <h6>Color:</h6>
-          <a href="#" class="swatch-brown selected"></a>
-          <a href="#" class="swatch-red"></a>
-          <a href="#" class="swatch-cream"></a>
-          <a href="#" class="swatch-black"></a>
-          <a href="#" class="swatch-white"></a>
-        </div>
--->
-        <!--<div class="size-options clearfix mb-40">
-          <h6>Size:</h6>
-          <a href="#" class="size-xs selected">XS</a>
-          <a href="#" class="size-s">S</a>
-          <a href="#" class="size-m">M</a>
-          <a href="#" class="size-l">L</a>
-          <a href="#" class="size-xl">XL</a>
-        </div>-->
-
-        <a href="#" class="btn btn-dark btn-md add-to-cart left">Add to Cart</a>
+						</div>
+					</div>
+					<!-- .product-action end -->
+					<hr class="mt-30 mb-30">
+					<div class="product-share  text-center-xs">
+						<h5 class="share-title">share product: </h5>
+						<a class="share-facebook" href="#"><i class="fa fa-facebook"></i></a>
+						<a class="share-twitter" href="#"><i class="fa fa-twitter"></i></a>
+						<a class="share-google-plus" href="#"><i class="fa fa-google-plus"></i></a>
+						<a class="share-pinterest" href="#"><i class="fa fa-pinterest"></i></a>
+						<a class="share-dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+					</div>
+					<!-- .product-share end -->
+				</div>
+			</div>
+			<!-- .row end -->
+		</div>
+		<!-- .container end -->
+	</section>
+	<!-- #blog end -->
 
 
-        <div class="product_meta">
-           Category: <a href="#">Accessories</a></span>
-          <span class="tagged_as">Tags: <a href="#">Elegant</a>, <a href="#">Bag</a></span>
-        </div>
-
-
-      </div>
-      <!-- end product description -->
-
-      <div class="col-md-12 mt-70">
-        <div class="tabs">
-          <ul class="nav nav-tabs">
-            <li class="active">
-              <a href="#tab-one" data-toggle="tab">Description</a>
-            </li>
-            <li>
-              <a href="#tab-two" data-toggle="tab">Information</a>
-            </li>
-            <!--<li>
-              <a href="#tab-three" data-toggle="tab">Reviews</a>
-            </li>-->
-          </ul>
-          <!-- end tabs -->
-
-          <!-- tab content -->
-          <div class="tab-content pb-0">
-
-            <div class="tab-pane fade in active" id="tab-one">
-              <p>
-                We possess within us two minds. So far I have written only of the conscious mind. I would now like to introduce you to your second mind, the hidden and mysterious subconscious. Our subconscious mind contains such power and complexity that it literally
-                staggers the imagination.And finally the subconscious is the mechanism through which thought impulses which are repeated regularly with feeling and emotion are quickened, charged. Our subconscious mind contains such power and complexity
-                that it literally staggers the imagination.And finally the subconscious is the mechanism through which thought impulses.
-              </p>
-            </div>
-
-            <div class="tab-pane fade" id="tab-two">
-              <table>
-                <thead>
-                  <tr>
-                    <th>CPU</th>
-                    <td>2.7GHz quad-core Intel Core i5 Turbo Boost up to 3.2GHz</td>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th>RAM</th>
-                    <td>8GB (two 4GB) memory</td>
-                  </tr>
-                  <tr>
-                    <th>Video</th>
-                    <td>Intel Iris Pro Graphics</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div class="tab-pane fade" id="tab-three">
-
-              <div class="reviews">
-                <ul class="reviews-list">
-                  <li>
-                    <div class="review-body">
-                      <div class="review-content">
-                        <p class="review-author"><strong>Alexander Samokhin</strong> - May 6, 2014 at 12:48 pm</p>
-                        <div class="rating">
-                          <a href="#"></a>
-                        </div>
-                        <p>This template is so awesome. I didn’t expect so many features inside. E-commerce pages are very useful, you can launch your online store in few seconds. I will rate 5 stars.</p>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div class="review-body">
-                      <div class="review-content">
-                        <p class="review-author"><strong>Christopher Robins</strong> - May 6, 2014 at 12:48 pm</p>
-                        <div class="rating">
-                          <a href="#"></a>
-                        </div>
-                        <p>This template is so awesome. I didn’t expect so many features inside. E-commerce pages are very useful, you can launch your online store in few seconds. I will rate 5 stars.</p>
-                      </div>
-                    </div>
-                  </li>
-
-                </ul>
-              </div>
-              <!--  end reviews -->
-            </div>
-
-          </div>
-          <!-- end tab content -->
-
-        </div>
-      </div>
-      <!-- end tabs -->
-
-    </div>
-    <!-- end row -->
-  </div>
-  <!-- end container -->
-</section>
 {% endblock %}
