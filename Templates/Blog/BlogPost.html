@@ -28,7 +28,7 @@
 							<ul class="entry-meta list-inline clearfix">
 								<li class="entry-date">Published On: <span>{{ blog_post.date}}</span></li>
 								<li class="entry-author">Published By:
-									<a href="#">{{ blog_post.author }}</a>
+									<a href="{% url 'author-post' blog_post.author %}">{{ blog_post.author }}</a>
 								</li>
 								<li class="entry-category">Category :
 									<a href="#">{{ blog_post.category }}</a>

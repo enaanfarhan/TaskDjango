@@ -11,7 +11,7 @@ def author_list(request):
 def author_post(request, author_name):
     a_name = Author.objects.get(name=author_name)
     aposts = blog.objects.filter(author=a_name)
-    context = {'aposts': aposts}
+    context = {'aposts': aposts, 'name': author_name}
     return render(request, 'Blog/AuthorsPost.html', context)
 
 def blog_list(request):
