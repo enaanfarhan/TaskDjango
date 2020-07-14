@@ -7,7 +7,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-6">
-					<h1>Shop Single Product</h1>
+					<h1>{{ single_prod.name }}</h1>
 				</div>
 				<!-- .col-md-6 end -->
 				<div class="col-xs-12 col-sm-12 col-md-6">
@@ -75,7 +75,7 @@
 					<div class="product-details text-center-xs">
 						<h5>Other Details :</h5>
 						<ul class="list-unstyled">
-							<li>Category : <span>{{ single_prod.category }}</span></li>
+							<li>Category : <a href="#"><span>{{ single_prod.category }}</span></a></li>
 						</ul>
 					</div>
 					<!-- .product-details end -->
