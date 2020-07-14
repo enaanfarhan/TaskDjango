@@ -36,29 +36,18 @@
 				<div class="col-xs-12 col-sm-12 col-md-5">
 					<div class="prodcut-images">
 						<div class="product-img-slider">
-							<img src="{% static 'assets/images/shop/full/1.jpg' %}" alt="product image">
-							<img src="{% static 'assets/images/shop/full/2.jpg' %}" alt="product image">
-							<img src="{% static 'assets/images/shop/full/3.jpg' %}" alt="product image">
-							<img src="{% static 'assets/images/shop/full/4.jpg' %}" alt="product image">
-							<img src="{% static 'assets/images/shop/full/3.jpg' %}" alt="product image">
-						</div>
-						<div class="product-img-nav">
-							<img src="{% static 'assets/images/shop/full/5.jpg" alt="product image">
-							<img src="{% static 'assets/images/shop/full/6.jpg" alt="product image">
-							<img src="{% static 'assets/images/shop/full/7.jpg" alt="product image">
-							<img src="{% static 'assets/images/shop/full/8.jpg" alt="product image">
-							<img src="{% static 'assets/images/shop/full/7.jpg" alt="product image">
+							<img src="{{ single_prod.image.url }}" alt="product image">
 						</div>
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-7">
 					<div class="product-title text-center-xs">
-						<h3>{{ single_product.name }}</h3>
+						<h3>{{ single_prod.name }}</h3>
 					</div>
 					<!-- .product-title end -->
 					<div class="product-meta mb-30">
 						<div class="product-price pull-left pull-none-xs">
-							<p>${{ single_product.price }}</p>
+							<p>${{ single_prod.price }}</p>
 						</div>
 						<!-- .product-price end -->
 						<div class="product-review text-right text-center-xs">
@@ -69,7 +58,7 @@
 							<i class="fa fa-star-half-o"></i>
 							<i class="fa fa-star-o"></i>
 							</span>
-							<span>5 Review(s)</span> / <span>
+							<span>{{ single_prod.review }} Review(s)</span> / <span>
 							<a href="#">Add Review</a>
 							</span>
 						</div>
@@ -78,7 +67,7 @@
 					<!-- .product-img end -->
 					
 					<div class="product-desc text-center-xs">
-						<p class="mb-0">Lorem ipsum dolor sit amet, mauris suspendisse viverra eleifend tortor tellus suscipit, tortor aliquet at nulla mus, dignissim neque, nulla neque. Ultrices proin mi urna nibh ut, aenean sollicitudin etiam libero nisl, ultrices ridiculus in magna purus consequuntur, ipsum donec orci ad vitae pede, id odio.</p>
+						<p class="mb-0">{{ single_prod.description }}</p>
 					</div>
 					<!-- .product-desc end -->
 					
@@ -86,10 +75,7 @@
 					<div class="product-details text-center-xs">
 						<h5>Other Details :</h5>
 						<ul class="list-unstyled">
-							<li>Product : <span>Air System</span></li>
-							<li>Code : <span>#0214</span></li>
-							<li>Availabiltity : <span>Available</span></li>
-							<li>Brand : <span>Opel</span></li>
+							<li>Category : <span>{{ single_prod.category }}</span></li>
 						</ul>
 					</div>
 					<!-- .product-details end -->

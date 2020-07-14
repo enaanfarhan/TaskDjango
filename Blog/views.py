@@ -23,4 +23,3 @@ def blog_post(request, id):
     blog_post = blog.objects.get(id=id)
     context = {'blog_post': blog_post}
     return render(request, 'Blog/BlogPost.html', context)
-
