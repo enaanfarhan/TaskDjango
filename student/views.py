@@ -14,4 +14,14 @@ def std_info(request, roll):
     return render(request, 'Student/StudentInfo.html', context)
 
 def std_search(request):
-    return render(request, 'Student/StudentSearch.html')
+    std_dept = request.GET.get("std-dept")
+    roll = request.GET.get("std-roll")
+    context = {}
+
+    if std_dept and roll:
+        try:
+            std = StudentDetail.objects.get(std_dept=department, roll=roll)
+            context = {'gpa': std.gpa}
+        except:
+            context = {'error': "Sorry! Student not found."}
+    return render(request, 'Student/StudentSearch.html', context)

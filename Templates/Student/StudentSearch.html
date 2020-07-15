@@ -26,27 +26,46 @@
 	</section>
 	<!-- #page-title end -->
 
-	<section id="" class="">
-		<div class="container">
-            <div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-9">
-					<div class="row">
-						<form action="" class="form" method="get">
-                        Student Name: <input type="text" class="" id="name" placeholder="Student Name">
-                        Student Roll: <input type="text" class="" id="roll" placeholder="Roll Number">
-						<input type="submit" value="Submit">
-						</form>
-					</div>
-					<!-- .row end -->
-				</div>
 
+	<section class="contact">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-8 widget-contact pl-0 pr-0 p-none-xs p-none-sm">
+					<form id="contact-form" action="" method="get">
+						<div class="col-md-6">
+							<input type="text" class="form-control mb-30" id="name" placeholder="Department" name="std-dept"/>
+						</div>
+						<div class="col-md-6">
+							<input type="number" class="form-control mb-30" id="name" placeholder="Id" name="std-roll"/>
+						</div>
+						<div class="col-md-12">
+							<button type="submit" class="btn btn-primary btn-block">Submit</button>
+						</div>
+					</form>
+				</div>
 			</div>
 			<!-- .row end -->
+			<div class="container">
+				<br><br>
+			{% if gpa %}
+		<p>GPA: {{ gpa }}</p>
+		{% endif %}
 
+		{% if error %}
+		<p>{{ error }}</p>
+		{% endif %}
+
+				</div>
 		</div>
 		<!-- .container end -->
+		<br>
+		<br>
+		<br>
+
+
+
+
 	</section>
-	<!-- #blog end -->
 
 
 {% endblock %}
