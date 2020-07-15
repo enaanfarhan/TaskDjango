@@ -19,4 +19,3 @@ def product_category(request, category_name):
 def single_product(request, id):
     single_prod = product.objects.get(id=id)
     return render(request, 'Store/SingleProduct.html', {'single_prod':single_prod})
-
