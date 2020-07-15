@@ -12,3 +12,6 @@ def std_info(request, roll):
     std_info=StudentDetail.objects.get(roll=roll)
     context = {'std_info': std_info}
     return render(request, 'Student/StudentInfo.html', context)
+
+def std_search(request):
+    return render(request, 'Student/StudentSearch.html')
