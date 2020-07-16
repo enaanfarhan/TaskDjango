@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import StudentDetail
+from .forms import *
 
 # Create your views here.
 
@@ -9,19 +10,23 @@ def std_list(request):
     return render(request, 'Student/Studentlist.html', context)
 
 def std_info(request, roll):
-    std_info=StudentDetail.objects.get(roll=roll)
+    std_info = StudentDetail.objects.get(roll=roll)
     context = {'std_info': std_info}
     return render(request, 'Student/StudentInfo.html', context)
 
 def std_search(request):
-    std_class = request.GET.get("std-class")
-    roll = request.GET.get("std-roll")
-    context = {}
+    form = StudentInfoSearch(request.GET or None)
+    context = {'form':form}
 
-    if roll:
-        try:
-            std = StudentDetail.objects.get(std_class=std_class, roll=roll)
-            context = {'std': std}
-        except:
-            context = {'error': "Sorry! Student not found."}
+    if form.is_valid():
+        std_class = form.cleaned_data["std_class"]
+        roll = form.cleaned_data["roll"]
+
+        if std_class and roll:
+            try:
+                std = StudentDetail.objects.get(roll=roll)
+                context = {'std': std, 'form':form}
+            except:
+                context = {'error': "Sorry! Student not found.", 'form':form}
+
     return render(request, 'Student/StudentSearch.html', context)
