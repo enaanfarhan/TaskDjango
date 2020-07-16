@@ -65,9 +65,23 @@
 							</ul>
 						  </li>
                           <li class="nav-item has-dropdown"><a class="nav-link" href="{% url 'add-list' %}">Address</a></li>
-                          <li class="nav-item has-dropdown"><a class="nav-link" href="{% url 'blog-list' %}#">Blog</a></li>
-                          <li class="nav-item has-dropdown"><a class="nav-link" href="{% url 'authors' %}#">Authors</a></li>
-                          <li class="nav-item has-dropdown"><a class="nav-link" href="{% url 'store' %}#">Store</a></li>
+                          <li class="nav-item has-dropdown">
+							  <a data-toggle="dropdown" class="dropdown-toggle"  href="#">Blog</a>
+							  <ul class="dropdown-menu">
+								  <li><a href="{% url 'blog-list' %}">Post List</a></li>
+								  <li><a href="{% url 'authors' %}">Author List</a></li>
+								  <li><a href="">Add Author</a></li>
+								  <li><a href="">Add Blog Post</a></li>
+							  </ul>
+						  </li>
+                          <li class="nav-item has-dropdown">
+							  <a data-toggle="dropdown" class="dropdown-toggle" href="">Store</a>
+							  <ul class="dropdown-menu">
+								  <li><a href="{% url 'store' %}">Product List</a></li>
+								  <li><a href="#">Product Category</a></li>
+								  <li><a href="#">Add Category</a></li>
+							  </ul>
+						  </li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->

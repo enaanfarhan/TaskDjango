@@ -19,7 +19,7 @@ def blog_list(request):
     context = {'blog_list': blog_list}
     return render(request, 'Blog/BlogList.html', context)
 
-def blog_post(request, id):
-    blog_post = blog.objects.get(id=id)
+def blog_post(request, slug):
+    blog_post = blog.objects.get(slug=slug)
     context = {'blog_post': blog_post}
     return render(request, 'Blog/BlogPost.html', context)

@@ -50,7 +50,7 @@
 									</div>
 									<div class="entry-title">
 										<h3>
-											<a href="{% url 'blog-post' blogs.id %}">{{ blogs.title }}</a>
+											<a href="{% url 'blog-post' blogs.slug %}">{{ blogs.title }}</a>
 										</h3>
 									</div>
 									<!-- .entry-title end -->
@@ -65,7 +65,7 @@
 									</ul>
 									<!-- .entry-meta end -->
 									<div class="entry-snippet">
-										<p>{{ blogs.description|truncatewords:"50" }}<a href="{% url 'blog-post' blogs.id %}"> read more</a> </p>
+										<p>{{ blogs.description|truncatewords:"50" }}<a href="{% url 'blog-post' blogs.slug %}"> read more</a> </p>
 
 									</div>
 									<!-- .entry-snippet end -->
