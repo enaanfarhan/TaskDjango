@@ -30,3 +30,13 @@ def std_search(request):
                 context = {'error': "Sorry! Student not found.", 'form':form}
 
     return render(request, 'Student/StudentSearch.html', context)
+
+def addStudent(request):
+    form = StudentCreateForm(request.POST or None)
+    if request.method == 'POST':
+        if form.is_valid():
+            form.save()
+            return redirect('create-std')
+
+    context = { 'form':form }
+    return render(request, 'Student/AddStudent.html', context)
