@@ -1,16 +1,38 @@
-from django.contrib.auth import authenticate
-from django.shortcuts import render
+from django.contrib.auth import authenticate, login, logout
+from django.shortcuts import render, redirect
 from .forms import *
 
 # Create your views here.
+def user_dashboard(request):
+    return render(request, 'Account/dashboard.html')
+
 def user_login(request):
-    form = UserLoginForm()
+    form = UserLoginForm(request.POST or None)
     if request.method == 'POST':
         if form.is_valid():
             username = form.cleaned_data["username"]
             password = form.cleaned_data["password"]
-            authenticate()
+            user = authenticate(username=username, password=password)
+            if user:
+                login(request, user)
+                return redirect('dashboard')
+            context = {
+                'form': form,
+                'error': "Sorry! no user found!!!"
+            }
+            return render(request, 'Account/login.html', context)
 
 
-    context ={'form':form}
+    context = {
+        'form': form
+    }
     return render(request, 'Account/login.html', context)
+
+
+def user_logout(request):
+    logout(request)
+    return redirect('login')
+
+
+def user_register(request):
+    return render(request, 'Account/register.html')

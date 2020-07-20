@@ -47,7 +47,7 @@
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<a class="logo" href="">
+					<a class="logo" href="{% url 'home' %}">
 					<img src="{% static 'assets/images/logo/logo-light.png' %}" alt="Autoshop">
 					</a>
 				</div>
@@ -82,6 +82,13 @@
 								  <li><a href="#">Add Category</a></li>
 							  </ul>
 						  </li>
+                          <li class="nav-item has-dropdown">
+							  <a data-toggle="dropdown" class="dropdown-toggle" href="">Account</a>
+							  <ul class="dropdown-menu">
+								  <li><a href="{% url 'login' %}">Login</a></li>
+								  <li><a href="{% url 'register' %}">Register</a></li>
+							  </ul>
+						  </li>
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
@@ -94,15 +101,13 @@
 	<!-- Clients
 ============================================= -->
 
-<div id="wrapper" class="wrapper clearfix">
 	<header id="navbar-spy" class="header header-1">
 	</header>
-
     {% block content %}
 
     {% endblock %}
 
-</div>
+
 
 
 

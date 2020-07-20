@@ -2,42 +2,40 @@
 
 {% block content %}
 
-<div id="wrapper" class="wrapper clearfix">
 	<div class="modal-dialog">
 							<div class="modal-content">
 								<div class="modal-body">
-									<p>Welcome Back</p>
-									<h6>Login Area</h6>
-									<div class="sign-form">
-										<form class="mb-0" action="" method="post">
+									<h6>User Register</h6>
+									<div class="register-form">
+										<form class="mb-0">
 											<div class="form-group">
-												{% csrf_token %}
-    											{{ form.as_p }}
-											</div>
-										<!--	<div class="form-group">
 												<input type="text" class="form-control" id="username" placeholder="User Name">
+											</div>
+											<div class="form-group">
+												<input type="text" class="form-control" id="email" placeholder="Email">
 											</div>
 											<div class="form-group">
 												<input type="password" class="form-control" id="pwd" placeholder="Password">
 											</div>
-											<div class="checkbox pull-left">
+											<div class="form-group">
+												<input type="password" class="form-control" id="pwdc" placeholder="Confirm Password">
+											</div>
+											<div class="checkbox">
 												<label>
 													<input type="checkbox">
-													Remember me</label>
+													I Agree To
+													<a href="#">The Terms Of Use ?</a>
+												</label>
 											</div>
-											<div class="pull-right lost-pass">
-												<a href="#">Forget Password?</a>
-											</div> -->
-											<button type="submit" class="btn btn-primary btn-block">Sign In</button>
+											<button type="submit" class="btn btn-primary btn-block mt-30">Register</button>
 										</form>
 										<div class="form-links text-center">
-											<a href="{% url 'register' %}">Create New Account</a>
+											<a href="{% url 'login' %}">Have an account? Login Here</a>
 										</div>
 									</div>
 								</div>
 							</div>
 							<!-- /.modal-content -->
 						</div>
-</div>
 
 {% endblock %}
