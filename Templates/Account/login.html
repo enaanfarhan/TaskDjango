@@ -12,7 +12,9 @@
 										<form class="mb-0" action="" method="post">
 											<div class="form-group">
 												{% csrf_token %}
-    											{{ form.as_p }}
+												{% for x in form %}
+													{{ x }}
+												{% endfor %}
 											</div>
 										<!--	<div class="form-group">
 												<input type="text" class="form-control" id="username" placeholder="User Name">
@@ -29,15 +31,17 @@
 												<a href="#">Forget Password?</a>
 											</div> -->
 											<button type="submit" class="btn btn-primary btn-block">Sign In</button>
+											{% if error %}
+												<div class="form-links text-center">
+													<p>{{ error }}</p>
+												</div>
+											{% endif %}
 										</form>
+
 										<div class="form-links text-center">
 											<a href="{% url 'register' %}">Create New Account</a>
 										</div>
-										{% if error %}
-										<div class="form-links text-center">
-											<p>{{ error }}</p>
-										</div>
-										{% endif %}
+
 									</div>
 								</div>
 							</div>

@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from .models import *
+from .forms import *
 
 
 # Create your views here.
@@ -23,3 +24,18 @@ def blog_post(request, slug):
     blog_post = blog.objects.get(slug=slug)
     context = {'blog_post': blog_post}
     return render(request, 'Blog/BlogPost.html', context)
+
+
+def createblogpost(request):
+    form = CreatePostForm()
+    context = {
+        'form': form
+    }
+    return render(request, 'Blog/CreateBlogPost.html', context)
+
+def create_author(request):
+    form = CreateAuthor()
+    context = {
+        'form': form
+    }
+    return render(request, 'Blog/AddAuthor.html', context)
