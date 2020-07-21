@@ -42,61 +42,10 @@
 <!-- Document Wrapper
 	============================================= -->
 <div id="wrapper" class="wrapper clearfix">
-	<header id="navbar-spy" class="header header-3">
-		<nav id="primary-menu" class="navbar navbar-fixed-top">
-			<div class="container">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-					<a class="logo" href="{% url 'home' %}">
-					<img src="{% static 'assets/images/logo/logo-light.png' %}" alt="Autoshop">
-					</a>
-				</div>
-
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse pull-right" id="header-navbar-collapse-1">
-					<ul class="nav navbar-nav navbar-left">
-						<!-- Raw Code <li class="has-dropdown active"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Home</a></li>-->
-                        <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
-                          <li class="nav-item has-dropdown">
-							  <a href="#" data-toggle="dropdown" class="dropdown-toggle">Student</a>
-							  <ul class="dropdown-menu">
-								<li><a href="{% url 'std-list' %}">Student List</a></li>
-								<li><a href="{% url 'std-search' %}">Student Search</a></li>
-							</ul>
-						  </li>
-                          <li class="nav-item has-dropdown"><a class="nav-link" href="{% url 'add-list' %}">Address</a></li>
-                          <li class="nav-item has-dropdown">
-							  <a data-toggle="dropdown" class="dropdown-toggle"  href="#">Blog</a>
-							  <ul class="dropdown-menu">
-								  <li><a href="{% url 'blog-list' %}">Post List</a></li>
-								  <li><a href="{% url 'authors' %}">Author List</a></li>
-								  <li><a href="">Add Author</a></li>
-								  <li><a href="">Add Blog Post</a></li>
-							  </ul>
-						  </li>
-                          <li class="nav-item has-dropdown">
-							  <a data-toggle="dropdown" class="dropdown-toggle" href="">Store</a>
-							  <ul class="dropdown-menu">
-								  <li><a href="{% url 'store' %}">Product List</a></li>
-								  <li><a href="#">Product Category</a></li>
-								  <li><a href="#">Add Category</a></li>
-							  </ul>
-						  </li>
-                          <li class="nav-item has-dropdown">
-							  <a data-toggle="dropdown" class="dropdown-toggle" href="">Account</a>
-							  <ul class="dropdown-menu">
-								  <li><a href="{% url 'login' %}">Login</a></li>
-								  <li><a href="{% url 'register' %}">Register</a></li>
-							  </ul>
-						  </li>
-					</ul>
-				</div>
-				<!-- /.navbar-collapse -->
-			</div>
-			<!-- /.container-fluid -->
-		</nav>
-	</header>
-    <br>
+		<!-- Manu Import
+============================================= -->
+	{% include 'manu.html' %}
+	<!-- Manu end -->
 
 	<!-- Clients
 ============================================= -->
@@ -110,31 +59,12 @@
 
 
 
-
 	<!-- Footer #1
 ============================================= -->
-	<footer id="footer" class="footer footer-1">
+	{% include 'footer.html' %}
 
-
-		<!-- Footer Bar
-	============================================= -->
-		<div class="footer-bar">
-			<div class="container">
-				<div class="row">
-					<div class="col-xs-12 col-sm-6 col-md-6">
-						<div class="powered">
-							<p class="m-0 text-center text-white">&copy; 2020 <b>TeskDjango</b> | Developed By: <b><a href="https://www.facebook.com/enaanfarhan">Enaan Farhan</a></b></p>
-						</div>
-					</div>
-
-				</div>
-			</div>
-			<!-- .container end -->
-		</div>
-		<!-- .footer-copyright end -->
-	</footer>
 </div>
-<!-- #wrapper end -->
+
 
 <!-- Footer Scripts
 ============================================= -->
