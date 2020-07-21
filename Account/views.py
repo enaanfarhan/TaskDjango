@@ -1,4 +1,5 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .forms import *
 
@@ -35,4 +36,15 @@ def user_logout(request):
 
 
 def user_register(request):
-    return render(request, 'Account/register.html')
+    form = UserCreationForm()
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+
+    context = {
+        'form':form
+    }
+    return render(request, 'Account/register.html', context)
+
