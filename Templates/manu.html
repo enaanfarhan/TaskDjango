@@ -28,7 +28,7 @@
 								  <li><a href="{% url 'blog-list' %}">Post List</a></li>
 								  <li><a href="{% url 'authors' %}">Author List</a></li>
 								  <li><a href="">Add Author</a></li>
-								  <li><a href="">Add Blog Post</a></li>
+								  <li><a href="{% url 'create-post' %}">Add Blog Post</a></li>
 							  </ul>
 						  </li>
                           <li class="nav-item has-dropdown">
@@ -39,13 +39,15 @@
 								  <li><a href="#">Add Category</a></li>
 							  </ul>
 						  </li>
-                          <li class="nav-item has-dropdown">
-							  <a data-toggle="dropdown" class="dropdown-toggle" href="">Account</a>
-							  <ul class="dropdown-menu">
-								  <li><a href="{% url 'login' %}">Login</a></li>
-								  <li><a href="{% url 'register' %}">Register</a></li>
-							  </ul>
-						  </li>
+                        {% if user.is_authenticated %}
+							<li class="nav-item has-dropdown">
+							  <a data-toggle="dropdown" class="dropdown-toggle" href="{% url 'dashboard' %}">Account</a>
+						 	 </li>
+						{% else %}
+							<li class="nav-item has-dropdown">
+							  <a data-toggle="dropdown" class="dropdown-toggle" href="{% url 'login' %}">Login</a>
+						  	</li>
+						{% endif %}
 					</ul>
 				</div>
 				<!-- /.navbar-collapse -->
