@@ -6,7 +6,7 @@ from .forms import *
 # Create your views here.
 def user_dashboard(request):
     if not request.user.is_authenticated:
-        return redirect('login')
+        return redirect('logingit pull')
     return render(request, 'Account/dashboard.html')
 
 def user_login(request):
