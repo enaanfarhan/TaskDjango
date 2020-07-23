@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import StudentDetail
 from .forms import *
 
@@ -19,10 +19,9 @@ def std_search(request):
     context = {'form':form}
 
     if form.is_valid():
-        std_class = form.cleaned_data["std_class"]
         roll = form.cleaned_data["roll"]
 
-        if std_class and roll:
+        if roll:
             try:
                 std = StudentDetail.objects.get(roll=roll)
                 context = {'std': std, 'form':form}
@@ -38,5 +37,7 @@ def addStudent(request):
             form.save()
             return redirect('create-std')
 
-    context = { 'form':form }
+    context = {
+        'form': form
+    }
     return render(request, 'Student/AddStudent.html', context)

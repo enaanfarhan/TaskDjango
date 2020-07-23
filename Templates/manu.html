@@ -5,7 +5,7 @@
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<a class="logo" href="{% url 'home' %}">
-					<img src="{% static 'assets/images/logo/logo-light.png' %}" alt="Enaan Farhan">
+					<img src="{% static 'images/logo/logo-light.png' %}" alt="Enaan Farhan">
 					</a>
 				</div>
 
@@ -19,6 +19,7 @@
 							  <ul class="dropdown-menu">
 								<li><a href="{% url 'std-list' %}">Student List</a></li>
 								<li><a href="{% url 'std-search' %}">Student Search</a></li>
+								<li><a href="{% url 'create-std' %}">Add Student</a></li>
 							</ul>
 						  </li>
                           <li class="nav-item has-dropdown"><a class="nav-link" href="{% url 'add-list' %}">Address</a></li>
