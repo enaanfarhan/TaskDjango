@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 from .forms import *
 
@@ -33,9 +33,22 @@ def createblogpost(request):
     }
     return render(request, 'Blog/CreateBlogPost.html', context)
 
+#def create_author(request):
+#    form = CreateAuthor()
+#    context = {
+#        'form': form
+#    }
+#    return render(request, 'Blog/AddAuthor.html', context)
+
 def create_author(request):
     form = CreateAuthor()
+    if request.method == 'POST':
+        form = CreateAuthor(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('authors')
     context = {
         'form': form
     }
     return render(request, 'Blog/AddAuthor.html', context)
+

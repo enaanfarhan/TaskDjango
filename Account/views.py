@@ -1,12 +1,12 @@
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import render, redirect
 from .forms import *
 
 # Create your views here.
+@login_required
 def user_dashboard(request):
-    if not request.user.is_authenticated:
-        return redirect('login')
     return render(request, 'Account/dashboard.html')
 
 def user_login(request):
