@@ -40,12 +40,12 @@
 							  </ul>
 						  </li>
                         {% if user.is_authenticated %}
-							<li class="nav-item">
-							  <a class="nav-link" href="{% url 'dashboard' %}">Account</a>
+							<li class="nav-item has-dropdown">
+							  <a data-toggle="dropdown" class="dropdown-toggle" href="{% url 'dashboard' %}">Account</a>
 						 	 </li>
 						{% else %}
-							<li class="nav-item">
-							  <a class="nav-link" href="{% url 'login' %}">Login</a>
+							<li class="nav-item has-dropdown">
+							  <a data-toggle="dropdown" class="dropdown-toggle" href="{% url 'login' %}">Login</a>
 						  	</li>
 						{% endif %}
 					</ul>
