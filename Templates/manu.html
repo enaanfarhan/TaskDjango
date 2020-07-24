@@ -22,7 +22,12 @@
 								<li><a href="{% url 'create-std' %}">Add Student</a></li>
 							</ul>
 						  </li>
-                          <li class="nav-item has-dropdown"><a class="nav-link" href="{% url 'add-list' %}">Address</a></li>
+						<li class="nav-item has-dropdown"><a href="#" data-toggle="dropdown" class="dropdown-toggle">Address</a>
+						  	<ul class="dropdown-menu">
+							  <li><a class="nav-link" href="{% url 'add-list' %}">Address List</a></li>
+							  <li><a href="{% url 'create-add' %}">Add Address</a></li>
+						  	</ul>
+						  </li>
                           <li class="nav-item has-dropdown">
 							  <a data-toggle="dropdown" class="dropdown-toggle"  href="#">Blog</a>
 							  <ul class="dropdown-menu">

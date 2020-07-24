@@ -1,24 +1,20 @@
 {% extends 'base.html' %}
 
 {% block head_script %}
-<style>
-  <!-- Home Page CSS Start-->
-* {
-margin: 0;
-  padding: 0;
-  -webkit-font-smoothing: antialiased;
 
+<style>
+
+<!-- Home Page CSS Start-->
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
 }
 
 html,
 body{
-
-
-   height: 100%;
-   weight: 100%;
-  background: #083952;
-  color: #f8f8f8;
-
+    background: #083952;
+    color: #f8f8f8;
 }
 
 .terminal {
@@ -35,32 +31,37 @@ body{
   content: '$';
   color: #52a563;
 }
+.footer{
 
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+}
 </style>
 {% endblock %}
 
 {% block content%}
-	<section id="blog" class="blog blog-single">
-		<div class="container">
-			<div class="row">
-    <div class="terminal">
-      <span class="dollar"></span> hi there, I'm Enaan Farhan
-      <br/>
-      <span class="dollar"></span> a digital marketer & web developer
-      <br/>
-      <span class="dollar"></span> based in Dhaka, Bangladesh
-      <br/>
-      <span class="dollar"></span> i love to drink tea
-      <br/>
-      <span class="dollar"></span> and love to learn new technology
-</div>
-            </div>
-        </div>
-    </section>
 
+            <div class="terminal">
+                  <span class="dollar"></span> hi there, I'm Enaan Farhan
+                  <br/>
+                  <span class="dollar"></span> a digital marketer & web developer
+                  <br/>
+                  <span class="dollar"></span> based in Dhaka, Bangladesh
+                  <br/>
+                  <span class="dollar"></span> i love to drink tea
+                  <br/>
+                  <span class="dollar"></span> and love to learn new technology
+
+            </div>
 {% endblock %}
 
 {% block body_script %}
+
 <script>
       // Typewriter.js
       // https://github.com/ronv/Typewriter.js

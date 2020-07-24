@@ -1,0 +1,17 @@
+{% extends 'Dashboard/DBase.html' %}
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">Add District</div>
+    <div class="card-body">
+        <form action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="submit" class="btn btn-success">
+        </form>
+
+    </div>
+</div>
+
+{% endblock %}
