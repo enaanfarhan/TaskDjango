@@ -31,3 +31,4 @@ class StudentCreateForm(forms.ModelForm):
             'gpa': forms.NumberInput(attrs={'class': 'form-control'}),
         }
 
+

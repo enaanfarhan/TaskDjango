@@ -50,3 +50,17 @@ def user_register(request):
     }
     return render(request, 'Account/register.html', context)
 
+@login_required
+def create_profile(request):
+    form = ProfileForm()
+    if request.method == 'POST':
+        form = ProfileForm(request.POST, request.FILES)
+        if form.is_valid():
+            profile = form.save(commit=False)
+            profile.user = request.user
+            profile.save()
+            return redirect('dashboard')
+
+
+    context = {'form':form }
+    return render(request, 'Dashboard/EditProfile.html', context)
